@@ -26,16 +26,3 @@ fi
 # Extract Chitubox to install dir
 mkdir $INSTALL_DIR/chitubox
 tar -xvf $FILE -C $INSTALL_DIR/chitubox --strip-components 1
-
-# Deploy icons
-## 32x32
-convert -resize 32x32 $ICON $ICONS_DIR/32x32/apps/$ICON
-## 48x48
-convert -resize 48x48 $ICON $ICONS_DIR/48x48/apps/$ICON
-## 64x64
-convert -resize 64x64 $ICON $ICONS_DIR/64x64/apps/$ICON
-## 128x128
-cp $ICON $ICONS_DIR/128x128/apps/$ICON
-
-# Deploy desktop file (Gnome menu entry)
-cp $DESKFILE $DESKFILES_DIR/$DESKFILE
