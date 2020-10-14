@@ -24,21 +24,21 @@ if ! test -f "$ICON"; then
 fi
 
 # Extract Chitubox to install dir
-sudo mkdir $INSTALL_DIR/chitubox
-sudo tar -xvf $FILE -C $INSTALL_DIR/chitubox --strip-components 1
+mkdir $INSTALL_DIR/chitubox
+tar -xvf $FILE -C $INSTALL_DIR/chitubox --strip-components 1
 
 # Deploy icons
 ## 32x32
-sudo convert -resize 32x32 $ICON $ICONS_DIR/32x32/apps/$ICON
+convert -resize 32x32 $ICON $ICONS_DIR/32x32/apps/$ICON
 ## 48x48
-sudo convert -resize 48x48 $ICON $ICONS_DIR/48x48/apps/$ICON
+convert -resize 48x48 $ICON $ICONS_DIR/48x48/apps/$ICON
 ## 64x64
-sudo convert -resize 64x64 $ICON $ICONS_DIR/64x64/apps/$ICON
+convert -resize 64x64 $ICON $ICONS_DIR/64x64/apps/$ICON
 ## 128x128
-sudo cp $ICON $ICONS_DIR/128x128/apps/$ICON
+cp $ICON $ICONS_DIR/128x128/apps/$ICON
 
 # Deploy desktop file (Gnome menu entry)
-sudo cp $DESKFILE $DESKFILES_DIR/$DESKFILE
+cp $DESKFILE $DESKFILES_DIR/$DESKFILE
 
 # Create file association
-echo "model/x.stl-binary=chitubox.desktop" | sudo tee -a /usr/share/applications/defaults.list > /dev/null
+echo "model/x.stl-binary=chitubox.desktop" | tee -a /usr/share/applications/defaults.list > /dev/null
