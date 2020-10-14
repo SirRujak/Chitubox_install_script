@@ -39,6 +39,3 @@ cp $ICON $ICONS_DIR/128x128/apps/$ICON
 
 # Deploy desktop file (Gnome menu entry)
 cp $DESKFILE $DESKFILES_DIR/$DESKFILE
-
-# Create file association
-echo "model/x.stl-binary=chitubox.desktop" | tee -a /usr/share/applications/defaults.list > /dev/null
